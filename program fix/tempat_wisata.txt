@@ -1,0 +1,21 @@
+harga,wisata,rating
+0,Pantai Kuta,4.5
+52000,Dream Museum Zone,4.0
+230000,Waterboom Bali,4.7
+90000,GWK,4.5
+50000,Pura Ulun Siwi,4.6
+115000,Taman Budaya Garuda Wisnu Kencana dan New Kuta Golf,4.5
+40000,Pura Luhur Uluwatu,4.6
+20000,Pantai Pandawa,4.6
+15000,Danau Batur,4.6
+15000,Desa Penglipuran,4.8
+20000,Tanah Lot,4.7
+60000,Monkey Forest Ubud,4.5
+0,Pantai Jimbaran,4.4
+0,Pantai Muaya,4.5
+30000,Pura Tirta Empul Tampak Siring,4.6
+15000,Air Terjun Sekumpul,3.9
+5000,Pantai Tanjung Benoa,4.4
+30000,Danau Beratan Bedugul,4.7
+0,Pantai Sanur,4.5
+10000,Nusa Penida,4.7
