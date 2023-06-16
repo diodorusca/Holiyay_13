@@ -1,0 +1,28 @@
+harga,nama,rating
+110000,Easton Kuta,3.7
+130000,Hotel Segara Sadhu Inn,4
+200000,Hotel The Hill Ungasan,4
+120000,Restu Bali Hotel,4.1
+120000,Mirah Hostel,4.2
+335000,Hotel Rantun Place,4.2
+2900000,The Ayu Kintamani Villa,4.2
+190000,Hotel Nuraini,4.3
+310000,CLV Hotel and Villa,4.3
+500000,Pandawa Hill Resort,4.4
+500000,Hotel Ubud Tropical Garden,4.4
+580000,Uma Mani Villa,4.4
+1070000,Hotel Anumana Ubud,4.4
+1200000,Kuta Seaview Boutique Resort,4.4
+1330000,The Sakala Resort,4.4
+300000,Pandawa Beach Homestay,4.5
+1320000,The Saren Hotel,4.5
+1100000,Hotel Four Points,4.6
+925000,Hotel PonDaNu,4.6
+670000,Hotel Natya Tanah Lot,4.6
+650000,Hotel Yello Kuta Beachwalk,4.6
+5000000,Jumana Bali Ungasan Resort,4.6
+470000,Hotel Kintamani Gold View,4.6
+630000,Hotel Richland Bali,4.8
+180000,Sugi Gede Homestay,4.8
+230000,Pondok Agung,4.8
+400000,Rostika Villa Sekumpul,4.9
