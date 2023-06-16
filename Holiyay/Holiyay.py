@@ -33,7 +33,7 @@ def sign_in():
 #==========================================================================================
 
 def keluar():
-     print("Terima Kasih sudah menggunakan Holiyay")
+     print("\nTerima Kasih sudah menggunakan Holiyay")
      exit()
 
 #==========================================================================================
@@ -206,7 +206,7 @@ def lama_libur():
     3 hari
     4 hari''')
             global hari
-            hari = int(input("Silakan memilih berapa lama waktu berwisata (2/3/4): "))
+            hari = int(input("Masukkan berapa lama waktu berwisata (2/3/4): "))
             if hari not in [2, 3, 4]:
                 raise ValueError("Pilihan jumlah hari yang dimasukkan tidak valid, silakan memilih jumlah hari 2, 3, atau 4.")
             break
@@ -219,28 +219,27 @@ def lama_libur():
     cek_total_harga = None
 
     global kategori_budget
-    global total_harga
 
     if hari == 2:
             print(
     '''\nSilahkan memilih rentang budget:
-        1. Kurang dari Rp 600.000,-
-        2. Lebih dari Rp 600.000,-''')
+        1. Kurang dari Rp 700.000,-
+        2. Lebih dari Rp 700.000,-''')
             print("\n===========================================")
             kategori_budget = int(input("masukkan jumlah nominal budget anda (1/2): "))
             print("===========================================\n")
             if kategori_budget == 1:
-                cek_total_harga = lambda total_harga: total_harga < 400000
+                cek_total_harga = lambda total_harga: total_harga <= 400000
             elif kategori_budget == 2:
-                cek_total_harga = lambda total_harga: total_harga > 400000
+                cek_total_harga = lambda total_harga: total_harga >= 400000
             else:
                 lama_libur()
 
     elif hari == 3:
             print(
     '''\nSilahkan memilih rentang budget:
-        1. Kurang dari Rp 800.000,-
-        2. Lebih dari Rp 800.000,-''')
+        1. Kurang dari Rp 950.000,-
+        2. Lebih dari Rp 950.000,-''')
             print("\n===========================================")
             kategori_budget = int(input("masukkan jumlah nominal budget anda (1/2): "))
             print("===========================================\n")
@@ -254,8 +253,8 @@ def lama_libur():
     elif hari == 4:
             print(
     '''\nSilahkan memilih rentang budget:
-        1. Kurang dari Rp 1.000.000,-
-        2. Lebih dari Rp 1.000.000,-''')
+        1. Kurang dari Rp 1.200.000,-
+        2. Lebih dari Rp 1.200.000,-''')
             print("\n==========================================")
             kategori_budget = int(input("masukkan jumlah nominal budget anda (1/2): "))
             print("==========================================\n")
@@ -273,7 +272,7 @@ def lama_libur():
     print("\nberikut tempat wisata yang dapat anda pilih")
     print("="*77)
     for tempat_wisata in tempat_wisata_list:
-            print(f"{tempat_wisata[1]:^53} | {tempat_wisata[0]:^8} | {tempat_wisata[2]:^8} |")
+            print(f"| {tempat_wisata[1]:^53} | {tempat_wisata[0]:^8} | {tempat_wisata[2]:^8} |")
             print("="*77)
     print("\nberikut tempat penginapan yang dapat anda pilih")
     print("="*61)
@@ -285,7 +284,6 @@ def lama_libur():
 def memilih():
     input_tempat_wisata = input("\nsilahkan memilih tempat wisata: ")
     input_hotel = input("silahkan memilih tempat penginapan: ")
-    print("="*50)
 
     total_harga = 0
 
@@ -296,7 +294,9 @@ def memilih():
             tempat_wisata_pilihan = tempat_wisata[1]
             break
     else:
-        print("Input anda tidak valid")
+        print("\n=============================================")
+        print(f"{'Input anda tidak valid':^43}")
+        print("==============================================")
         memilih()
             
 
@@ -307,7 +307,9 @@ def memilih():
             hotel_pilihan = hotel[1]
             break
     else:
-         print("input anda tidak valid")
+         print("========================================")
+         print(f"{'input anda tidak valid':^43}")
+         print("========================================")
          memilih()
 
     global pemandu_dict
@@ -321,7 +323,7 @@ def memilih():
     
     while True:
             try:
-                input_biaya = int(input("Masukkan biaya dengan nominal pas: "))
+                input_biaya = int(input("\nMasukkan biaya dengan nominal pas: "))
             
             # Lanjutkan dengan program selanjutnya
                 if input_biaya == total_harga:
@@ -332,30 +334,38 @@ def memilih():
                     raise ValueError(f"Nominal yang dimasukkan kurang dari total harga, silakan memasukkan nominal {total_harga}.")
             
             except ValueError as e:
-                print("Kesalahan Jumlah biaya\n",str(e))
-    konfirmasi_pembayaran = input("Apakah Anda setuju dengan pembayaran tersebut? (ya/tidak) ")
+                print("\n===================================================================================")
+                print(f"{'Kesalahan Jumlah biaya':^80}")
+                print(f"{str(e):^80}")
+                print("====================================================================================")
+    konfirmasi_pembayaran = input("\nApakah Anda setuju dengan pembayaran tersebut? (ya/tidak) ")
 
     while True:
+        konfirmasi_pembayaran = input("Apakah Anda ingin melanjutkan pembayaran? (ya/tidak): ")
+        
         if konfirmasi_pembayaran.lower() == "ya":
-                    print()
-                    cetak_struk_holiyay(
-                        username, tempat_wisata_pilihan, harga_tempat_wisata, hotel_pilihan, harga_per_malam, hari,
-                        pemandu_dict["pemandu_terpilih"], pemandu_dict["harga_pemandu"],
-                        total_harga, input_biaya)
-                    exit()
+            print()
+            cetak_struk_holiyay(
+                username, tempat_wisata_pilihan, harga_tempat_wisata, hotel_pilihan, harga_per_malam, hari,
+                pemandu_dict["pemandu_terpilih"], pemandu_dict["harga_pemandu"],
+                total_harga, input_biaya)
+            exit()
         elif konfirmasi_pembayaran.lower() == "tidak":
-                    print(
-            '''\nSilakan memilih opsi:
-                1. Menu Awal
-                2. Pilih Wisata dan Penginapan
-                3. Keluar''')
-                    kembali = input("\nMasukkan pilihan anda (1/2/3): ")
-                    if kembali == "1":
-                        menu_awal()                
-                    elif kembali == "2":
-                        lama_libur()
-                    else:
-                        keluar()
+            print('''\nSilakan memilih opsi:
+                    1. Menu Awal
+                    2. Pilih Wisata dan Penginapan
+                    3. Keluar''')
+            kembali = input("\nMasukkan pilihan anda (1/2/3): ")
+            if kembali == "1":
+                menu_awal()                
+            elif kembali == "2":
+                lama_libur()
+            else:
+                keluar()
+        else:
+            print("Input yang Anda masukkan tidak valid. Silakan masukkan 'ya' atau 'tidak'.")
+            konfirmasi_pembayaran = input("Apakah Anda ingin melanjutkan pembayaran? (ya/tidak): ")
+
    
 
 #==========================================================================================
