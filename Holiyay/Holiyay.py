@@ -100,7 +100,9 @@ def bank():
     jenis_pembayaran = (input("Masukkan jenis bank (1/2/3): "))
 
     while jenis_pembayaran not in ["1", "2", "3"]:
-        print("Jenis bank yang Anda masukkan tidak valid. Silakan coba lagi.")
+        print("\n==================================================================")
+        print("Jenis bank yang Anda masukkan tidak valid. Silakan masukkan 1/2/3.")
+        print("==================================================================\n")
         jenis_pembayaran = (input("Masukkan jenis bank (1/2/3): "))    
 
 #==========================================================================================
@@ -215,6 +217,7 @@ def lama_libur():
             print(f"{'#404 Not Found#':^85}") 
             print(f"{str(e):^85}")
             print("==========================================================================================")
+            
     global cek_total_harga
     cek_total_harga = None
 
@@ -355,7 +358,7 @@ def memilih():
                     1. Menu Awal
                     2. Pilih Wisata dan Penginapan
                     3. Keluar''')
-            kembali = input("\nMasukkan pilihan anda (1/2/3): ")
+            kembali = input("Masukkan pilihan anda (1/2/3): ")
             if kembali == "1":
                 menu_awal()                
             elif kembali == "2":
@@ -403,5 +406,4 @@ Program ini akan membantu anda untuk memilih penginapan, tempat wisata, dan pema
             print(f"{str(e):^60}")
             print("===============================================================")
             continue
-
 menu_awal()
